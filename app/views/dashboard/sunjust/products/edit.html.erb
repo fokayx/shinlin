@@ -1,0 +1,7 @@
+編輯產品
+<%= render 'form' %>
+
+<% @product.photos.each do |photo| %>
+   <%= image_tag(photo.image.url) %>
+   <%= link_to 'delete', dashboard_sunjust_photo_path(photo), method: :delete %>
+<% end %>

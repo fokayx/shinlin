@@ -1,0 +1,8 @@
+<%= image_tag @photo.image %>
+<%= form_for [:dashboard, :sunjust, @photo] do |f| %>
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit %>
+<% end %>

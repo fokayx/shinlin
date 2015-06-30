@@ -1,0 +1,9 @@
+<p><%= @product.name %></p>
+
+<% @photos.each do |p| %>
+  <%= image_tag p.image_url %>
+  <%= link_to "Edit Photo", edit_dashboard_sunjust_photo_path(p) %>
+<% end %>
+<br>
+<%= link_to 'Edit', edit_dashboard_sunjust_product_path(@product) %> |
+<%= link_to 'Back', dashboard_sunjust_products_path %>

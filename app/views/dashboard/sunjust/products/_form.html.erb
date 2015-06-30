@@ -1,0 +1,15 @@
+<%= form_for [:dashboard, :sunjust, @product], html: { multipart: true} do |f| %>
+  <%= f.label :name, '品名' %>
+  <%= f.text_field :name %>
+  <%= f.label :texture, '' %>
+  <%= f.text_field :texture %>
+  <%= f.label :diameter, ' ' %>
+  <%= f.text_field :diameter %>
+  <%= f.label :size, ' ' %>
+  <%= f.text_field :size %>
+  <%= f.label :surface, ' ' %>
+  <%= f.text_field :surface %>
+  <%= file_field_tag "images[]", type: :file, multiple: true %>
+
+  <%= f.submit %>
+<% end %>

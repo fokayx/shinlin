@@ -1,0 +1,4 @@
+Welcome to ShinLing
+<% @products.each do |product| %>
+  <%= link_to "#{product.name}", dashboard_sunjust_product_path(product) %>
+<% end %>
