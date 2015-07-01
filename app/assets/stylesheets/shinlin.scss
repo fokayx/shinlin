@@ -1,3 +1,38 @@
 // Place all the styles related to the shinlin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//
+.sl-head {
+  text-align: center;
+}
+
+.sl-index-bg {
+  background: url(asset-path('shinlin_index.jpg')) no-repeat left top;
+  width: 1280px;
+  height: 680px;
+  h1 {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+  }
+
+}
+.sl-icon {
+  margin: 0 auto;
+  color: #fff;
+  border: 2px solid #ffffff;
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  display: block;
+  font-size: 90px;
+  line-height: 130px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.3);
+  p {
+    font-size: 28px;
+    line-height: 45px;
+  }
+}
+
+
