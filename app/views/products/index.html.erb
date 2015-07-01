@@ -1,0 +1,5 @@
+所有產品
+<% @products.each do |product| %>
+  <%= product.name %>
+  <%= link_to '產品詳細', product_path(product) %>
+<% end %>

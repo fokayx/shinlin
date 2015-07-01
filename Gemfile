@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# bootstrap
+gem 'bootstrap-sass', '~>3.3.5'
+
 # file upload
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 
