@@ -4,15 +4,20 @@
 //
 .sl-head {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .sl-index-bg {
-  background: url(asset-path('shinlin_index.jpg')) no-repeat left top;
-  width: 1280px;
-  height: 680px;
+  background-image: url(asset-path('shinlin_index.jpg'));
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
   h1 {
     position: absolute;
-    bottom: 60px;
+    top: 300px;
     left: 0;
     right: 0;
   }
@@ -35,4 +40,39 @@
   }
 }
 
+.sl-dashboard {
+  text-align: center;
+}
 
+.sl-content-block {
+  margin: 20px 0;
+  li {
+    list-style-type: none;
+  }
+}
+
+.col-sm-4 .product-thumbnail {
+  margin: 5px 0;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.sl-about {
+  box-shadow: -2px -2px 5px rgba(20%,20%,40%,0.2);
+  margin-top: 60px;
+  padding:30px 0;
+  article {
+    text-align: justify;
+  }
+}
+
+.sl-footer {
+  margin: 50px auto 0px;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 10px;
+  background-color: #999999;
+}

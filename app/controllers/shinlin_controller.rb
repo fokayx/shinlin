@@ -1,5 +1,6 @@
 class ShinlinController < ApplicationController
-  def index
 
+  def index
+    @products = Product.order("rand()").limit(6)
   end
 end

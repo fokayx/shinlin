@@ -1,5 +1,5 @@
 <main class="sl-head">
-  <div class="container, sl-index-bg" >
+  <div class="container, sl-index-bg" style="height:600px;" >
     <h1>
       <span class="sl-icon">SL
         <p>鑫林日用品</p>
@@ -10,9 +10,67 @@
 <div class="sl-content">
   <div class="container">
     <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 sl-dashboard"></div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 sl-dashboard">
+        <%= image_tag('sl_product.jpg') %>
+        <div class="index-product sl-content-block">
+          <div class="row">
+            <% @products.each do |product| %>
+              <div class="col-sm-4">
+                <%= link_to product_path(product) do %>
+                  <% product.photos.limit(1).each do |image| %>
+                    <%= image_tag(image.image, class:"img-thumbnail product-thumbnail") %>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%= link_to '查看更多产品', products_path, class:"btn btn-info", role:"button" %>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 sl-dashboard">
+        <%= image_tag('sl_logo.jpg') %>
+        <div class="sl-content-block">
+          <ul>主要供应产品
+            <li>窗帘杆</li>
+            <li>浴帘杆</li>
+            <li>窗帘滑轨</li>
+            <li>窗帘轨道</li>
+            <li>挂勾</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 sl-dashboard">
+        <%= image_tag('sl_contact.jpg') %>
+        <div class="sl-content-block">
+          <ul>欢迎联系我们
+            <li>业 务   :  刘晓涵</li>
+            <li>电 话   :  769-87735660</li>
+            <li>传 真   :  769-87735880</li>
+            <li>邮箱   :  sunjust01@163.com</li>
+            <li>中国.广东省东莞市清溪鎮</li>
+            <li>三中金龍工業區蓮塘路6號</li>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<%= link_to '更多產品', products_path, class:"btn btn-default", role:"button" %>
+<div class="sl-about">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>关于鑫林</h2>
+        <article>鑫林日用品有限公司是台湾伸适企业有限公司于中国的延伸企业,台湾成立于1988年,并于1994年在中国创立伸适塑料五金厂,专门OEM生产世界知名品牌的浴帘杆,窗帘杆,门帘杆,花架,DIY家具及各类的伸缩杆类的产品,自行开发的产品也多成为市场上的主流,随着公司不断壮大及中国国内经济快速成长,本公司于2008年成立了鑫林日用品有限公司,占地面积11000平方米,四座车间,位处东莞市清溪镇,临近高速公路及铁路,是生产五金厂品的重镇,有得天独厚的取材优势。
+        </article>
+        <h2>加工能力</h2>
+        <articl>鑫林拥有四个车间,分别为五金加工部,烤漆加工部,锌合金制造部,包装部,承接各种业务加工,并有强大的开发及生产能力,在窗帘杆,浴帘杆的日生产量可达两万套,厂房有完整生产设备,如切管机,抛光机,磨管机,弹簧机,铆钉机,弯管机,缩管机,冲床,滚抛机,送料机,卷料机......等精密机械,用于制造产品,以达到更高的生产效率,也备有多种质量测量仪器,如硬度测试计,盐雾测试机,膜厚测试器,重量测试…等,来为质量做重重把关。
+        </article>
+        <h2>质量承诺</h2>
+        <article>在董事长刘建声先生的带领下,将过去20多年生产的经验及最优质的外销产品引进了国内市场,让国内消费者能以最经济的消费就能享有与国际同步的高质量,高格调产品,多项专利产品加上多样化的表面处理及强大的配件供应链,秉承着“客户至上，质量为先，服务第一”的原则，我们竭诚为广大新老客户提供“充足的货源、优良的质量以及完善的服务”。
+        </article>
+      </div>
+    </div>
+  </div> 
+</div>
+<footer class="sl-footer">
+  Copyright © Shin Lin Home Fashion All Rights Reserve.
+</footer>
