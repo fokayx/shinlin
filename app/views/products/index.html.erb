@@ -1,5 +1,37 @@
-所有產品
-<% @products.each do |product| %>
-  <%= product.name %>
-  <%= link_to '產品詳細', product_path(product) %>
-<% end %>
+<header>
+  <div class="container product-header">
+    <div class="row">
+      <div class="col-sm-7">
+        <%= link_to root_path do %>
+          <%= image_tag("sl_logo_p.png") %>
+        <% end %>
+      </div>
+      <div class="col-sm-3 col-sm-offset-2">
+        <%= image_tag("sl_phone.png") %>
+      </div>
+    </div>
+  </div>  
+</header>
+<div class="product-content">
+  <div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-md-4">
+        <div class="product-show">
+          <% product.photos.limit(1).each do |i| %>
+            <%= image_tag(i.image, class:"product-image img-rounded") %>
+          <% end %>
+          <h2><%= product.name %></h2>
+          <ul>
+            <li>材質：<%= product.texture %></li>
+            <li>管徑：<%= product.diameter %></li>
+            <li>尺寸：<%= product.size %></li>
+            <li>表面處理：<%= product.surface %></li>
+          </ul>
+          <p><%#= link_to '產品詳細', product_path(product) %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
