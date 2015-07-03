@@ -41,6 +41,8 @@ gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 #image processor
 gem 'mini_magick'
 
+#paginator 
+gem 'kaminari'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
