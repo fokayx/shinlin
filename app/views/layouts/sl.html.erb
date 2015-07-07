@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>鑫林日用品</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'application/admin_navbar' %>
+    <div class="container-fluid" style="margin-top: 50px;">
+      <div class="row">
+        <%#= render 'application/admin_sidebar' %>
+        <div class="col-sm-12 col-md-12 main">
+        <h1 class="page-header">管理台</h1>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

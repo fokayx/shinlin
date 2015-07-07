@@ -1,4 +1,45 @@
-Welcome to ShinLing
-<% @products.each do |product| %>
-  <%= link_to "#{product.name}", dashboard_sunjust_product_path(product) %>
-<% end %>
+<div class="">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h2 class="sub-header">所有產品</h2>
+      <table class="table table-striped"> 
+        <thead>
+          <tr>
+            <td width="90%">品名</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td>
+              <%= link_to "#{product.name}", edit_dashboard_sunjust_product_path(product) %>
+            </td>
+            <td>
+              <%= link_to "刪除", dashboard_sunjust_product_path(product), method: :delete, class: 'btn btn-danger', date: { confirm:'確定刪除?' } %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <h2 class="sub-header">所有消息</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>訊息</td>
+            <td>時間</td>
+            <td></td>
+          </tr>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

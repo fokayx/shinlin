@@ -55,6 +55,8 @@ class Dashboard::Sunjust::ProductsController < Dashboard::Sunjust::BaseControlle
   end
 
   def destroy
+    @product.destroy
+    redirect_to dashboard_sunjust_products_path, notice:'產品已刪除'
 
   end
 
