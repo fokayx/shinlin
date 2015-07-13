@@ -6,7 +6,9 @@
 body {
 }
 
-
+h1 a {
+  font-size: 26px;
+}
 /*
  * Global add-ons
  */
@@ -102,3 +104,10 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.img_thumb {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+    

@@ -1,7 +1,15 @@
-編輯產品
-<%= render 'form' %>
 
-<% @product.photos.each do |photo| %>
-   <%= image_tag(photo.image.url) %>
-   <%= link_to 'delete', dashboard_sunjust_photo_path(photo), method: :delete %>
-<% end %>
+<div class="row">
+  <%= render 'form' %>
+  <div class="col-sm-4 col-md-4">
+      <h4>產品圖片</h4>
+    <div class="row">
+      <% @product.photos.each do |photo| %>
+        <div class="col-sm-6 img_thumb">
+          <%= image_tag(photo.image.thumb) %>
+          <%= link_to 'delete', dashboard_sunjust_photo_path(photo), method: :delete, class:"btn btn-sm btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div> 
