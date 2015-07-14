@@ -21,7 +21,7 @@ class Dashboard::Sunjust::ProductsController < Dashboard::Sunjust::BaseControlle
         }
       end
 
-    format.html { redirect_to dashboard_sunjust_products_path, notice: 'Product Created'}
+    format.html { redirect_to dashboard_sunjust_products_path, notice: '新增產品成功'}
     format.json { render json: @product, status: :created, location: @product }
     else
       format.html {render :new}

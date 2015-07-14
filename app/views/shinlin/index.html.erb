@@ -25,7 +25,11 @@
             <% end %>
           </div>
         </div>
-        <%= link_to '查看更多产品', products_path, class:"btn btn-info", role:"button" %>
+        <%= link_to products_path do %>
+          <div class="more-product">
+            查看更多产品
+          </div>
+        <% end %>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 sl-dashboard">
         <%= image_tag('sl_logo.jpg') %>
@@ -33,9 +37,9 @@
           <ul>主要供应产品
             <li>窗帘杆</li>
             <li>浴帘杆</li>
-            <li>窗帘滑轨</li>
-            <li>窗帘轨道</li>
-            <li>挂勾</li>
+            <li>浴帘挂勾</li>
+            <li>花架</li>
+            <li>DIY 置物架</li>
           </ul>
         </div>
       </div>
@@ -46,7 +50,7 @@
             <li>业 务   :  刘晓涵</li>
             <li>电 话   :  769-87735660</li>
             <li>传 真   :  769-87735880</li>
-            <li>邮箱   :  sunjust01@163.com</li>
+            <li>邮箱   :  sunjust02@163.com</li>
             <li>中国.广东省东莞市清溪鎮</li>
             <li>三中金龍工業區蓮塘路6號</li>
         </div>

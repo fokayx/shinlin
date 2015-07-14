@@ -1,1 +1,52 @@
-<%= @product.name %>
+<%= render 'products/header' %>
+<div class="product-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= link_to products_path do %>
+          <div class="product-list">
+            產品列表
+            <span class="glyphicon glyphicon-menu-right text-right" aria-hidden="true"></span>
+          </div>
+        <% end %>
+        <div class="panel panel-product">
+          <div class="list-group">
+            <% @products.each do |product| %>
+              <%= link_to "#{product.name}", product_path(product), class: 'list-group-item' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-5 show-image">
+        <% @product.photos.each do |image| %> 
+          <%= image_tag(image.image, class:'center-block') %>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <div class="product-detail ">
+          <%= @product.name %>
+        </div>
+        <table class="table">
+          <tr>
+            <td>材質</td>
+            <td><%= @product.texture %></td>
+          </tr>
+          <tr>
+            <td>管徑</td>
+            <td><%= @product.diameter %></td>
+          </tr>
+          <tr>
+            <td>尺寸</td>
+            <td><%= @product.size %></td>
+          </tr>
+          <tr>
+            <td width="25%">表面處理</td>
+            <td><%= @product.surface %></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

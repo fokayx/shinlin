@@ -8,11 +8,11 @@
   </head>
   <body>
     <%= render 'application/admin_navbar' %>
-    <%= render 'flash' %>
     <div class="container-fluid" style="margin-top: 40px;">
       <div class="row">
         <%#= render 'application/admin_sidebar' %>
         <div class="col-sm-12 col-md-12 main">
+    <%= render 'application/flash' %>
           <h1 class="page-header">
             <%= link_to '管理台', dashboard_sunjust_products_path %>
           </h1>
