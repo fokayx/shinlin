@@ -37,7 +37,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def watermark(watermark)
     manipulate! do |img|
       img = img.composite(MiniMagick::Image.open(watermark, "jpg")) do |c|
-        c.gravity "SouthEast"
+        c.gravity "East"
       end
       img = yield(img) if block_given?
       img

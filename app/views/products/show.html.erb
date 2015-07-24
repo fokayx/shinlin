@@ -14,6 +14,7 @@
             <% @products.each do |product| %>
               <%= link_to "#{product.name}", product_path(product), class: 'list-group-item' %>
             <% end %>
+            <%= link_to "鑫林首頁", root_path, class: "list-group-item" %>
           </div>
         </div>
       </div>
@@ -25,26 +26,26 @@
       </div>
       <div class="col-sm-4">
         <div class="product-detail ">
-          <%= @product.name %>
+          <h2><%= @product.name %></h2>
+          <table class="table product-table">
+            <tr>
+              <td>材質</td>
+              <td><%= @product.texture %></td>
+            </tr>
+            <tr>
+              <td>管徑</td>
+              <td><%= @product.diameter %></td>
+            </tr>
+            <tr>
+              <td>尺寸</td>
+              <td><%= @product.size %></td>
+            </tr>
+            <tr>
+              <td width="20%">加工</td>
+              <td><%= @product.surface %></td>
+            </tr>
+          </table>
         </div>
-        <table class="table">
-          <tr>
-            <td>材質</td>
-            <td><%= @product.texture %></td>
-          </tr>
-          <tr>
-            <td>管徑</td>
-            <td><%= @product.diameter %></td>
-          </tr>
-          <tr>
-            <td>尺寸</td>
-            <td><%= @product.size %></td>
-          </tr>
-          <tr>
-            <td width="25%">表面處理</td>
-            <td><%= @product.surface %></td>
-          </tr>
-        </table>
       </div>
 
     </div>

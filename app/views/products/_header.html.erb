@@ -1,4 +1,4 @@
-<header>
+<nav class="navbar navbar-fixed-top">
   <div class="container product-header">
     <div class="row">
       <div class="col-sm-7">
@@ -7,11 +7,16 @@
         <% end %>
       </div>
       <div class="col-sm-4 col-sm-offset-1 hidden-xs">
-        <%= image_tag("sl_phone.png", class:"img-responsive") %>
+        <div class="header-contact pull-left">
+          <span class="glyphicon glyphicon-info-sign pull-left" aria-hidden="true"></span>
+          <p> 电 话 : 769-87735660</p>
+          <p> 邮 箱 : sunjust02@163.com</p>
+        <%#= image_tag("sl_contact_s.jpg", class:"img-responsive pull-left") %>
+        </div>
       </div>
       <div class="col-sm-12 visible-xs">
          <p>欢迎联系 电话: 769-87735660 邮箱: sunjust01@163.com</p>
       </div>
     </div>
   </div>
-</header>
+</nav>

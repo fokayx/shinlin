@@ -5,17 +5,12 @@
       <% @products.each do |product| %>
       <div class="col-md-4">
         <div class="product-show">
-          <% product.photos.limit(1).each do |i| %>
-            <%= image_tag(i.image, class:"product-image img-rounded") %>
+          <%= link_to product_path(product) do %>
+            <% product.photos.limit(1).each do |i| %>
+              <%= image_tag(i.image, class:"product-image img-rounded") %>
+            <% end %>
+            <h2><%= product.name %></h2>
           <% end %>
-          <h2><%= link_to "#{product.name}", product_path(product) %></h2>
-          <ul>
-            <li>材質：<%= product.texture %></li>
-            <li>管徑：<%= product.diameter %></li>
-            <li>尺寸：<%= product.size %> 公分</li>
-            <li>表面處理：<%= product.surface %></li>
-          </ul>
-          <p><%#= link_to '產品詳細', product_path(product) %></p>
         </div>
       </div>
       <% end %>
