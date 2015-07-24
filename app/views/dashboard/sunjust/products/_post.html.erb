@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-md-5">
+  <h2 class="sub-header">所有消息</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>標題</td>
+        <td>時間</td>
+        <td></td>
+      </tr>
+    <tbody>
+        <% @posts.each do |post| %>
+      <tr>
+          <td>
+            <%= link_to "#{post.title}", edit_dashboard_sunjust_post_path(post) %>
+          </td>
+          <td><%= post.updated_at.strftime("%m/%d/%y") %></td>
+          <td>
+            <%= link_to "刪除", dashboard_sunjust_post_path(post), method: :delete, class: 'btn btn-danger btn-sm', date: { confirm:'確定刪除?' } %>
+          </td>
+      </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>

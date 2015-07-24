@@ -3,6 +3,7 @@ class Dashboard::Sunjust::ProductsController < Dashboard::Sunjust::BaseControlle
 
   def index
     @products = Product.all
+    @posts = Post.all
   end
 
   def new
