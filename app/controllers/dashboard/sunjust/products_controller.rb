@@ -2,8 +2,8 @@ class Dashboard::Sunjust::ProductsController < Dashboard::Sunjust::BaseControlle
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all
-    @posts = Post.all
+    @products = Product.order(name: :asc)
+    @posts = Post.order(created_at: :DESC)
   end
 
   def new

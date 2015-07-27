@@ -76,16 +76,11 @@ body div {
   li {
     list-style-type: none;
   }
-  .col-md-4 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
 }
 
 .col-sm-4 .product-thumbnail {
   margin: 5px 0;
-  width: 100px;
-  height: 100px;
+  width: 100%;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #fff;
@@ -98,6 +93,8 @@ body div {
   h2 {
     font-size: 24px;
     color: #005B94;
+    margin-top: 38px;
+    line-height: 38px;
   }
   article {
     text-align: justify;
