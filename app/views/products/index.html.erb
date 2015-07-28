@@ -6,8 +6,9 @@
       <div class="col-md-4">
         <div class="product-show">
           <%= link_to product_path(product) do %>
+            <%= img_blank product %>
             <% product.photos.limit(1).each do |i| %>
-              <%= image_tag(i.image, class:"product-image img-rounded") %>
+              <%= image_tag(i.image, class:"product-image img-rounded")%>
             <% end %>
             <h2><%= product.name %></h2>
           <% end %>

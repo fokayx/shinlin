@@ -12,7 +12,7 @@
         <div class="panel panel-product">
           <div class="list-group">
             <% @products.each do |product| %>
-              <%= link_to "#{product.name}", product_path(product), class: 'list-group-item' %>
+              <%= link_to "#{product.name}", product, class: 'list-group-item' %>
             <% end %>
             <%= link_to "鑫林首頁", root_path, class: "list-group-item" %>
           </div>
@@ -20,6 +20,7 @@
       </div>
 
       <div class="col-sm-5 show-image">
+        <%= img_blank @product %>
         <% @product.photos.each do |image| %> 
           <%= image_tag(image.image, class:'center-block') %>
         <% end %>
