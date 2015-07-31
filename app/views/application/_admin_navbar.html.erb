@@ -10,11 +10,14 @@
       <%= link_to '鑫林日用品', root_path, class: 'navbar-brand' %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
+      <% if user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to '新增產品', new_dashboard_sunjust_product_path %></li>
         <li><%= link_to '發佈消息', new_dashboard_sunjust_post_path %></li>
-        <li><%= link_to '登出' %></li>
+        <li><%= link_to "hi, #{current_user.name}" %> </li>
+        <li><%= link_to '登出', session_path, method: :delete %></li>
       </ul>
+      <% end %>
     </div>
   </div>
 </nav>
