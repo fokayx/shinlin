@@ -7,11 +7,15 @@ Rails.application.routes.draw do
 
   resources :products, :photos
 
+  resource :session, only:[:create, :destroy]
   namespace :dashboard do
     namespace :sunjust do
+      get 'sign_in' => "base#sign_in"
       resources :products, :photos, :posts
     end
   end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,3 +1,3 @@
-class Dashboard::DashboardsController <  ActionController::Base
-  
+class Dashboard::DashboardsController < ApplicationController 
+
 end
