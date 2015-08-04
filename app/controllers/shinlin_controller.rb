@@ -1,7 +1,7 @@
 class ShinlinController < ApplicationController
 
   def index
-    @products = Product.all.sample(6)
+    @products = Product.order("rand()").limit(6)
     @post = Post.last
   end
 end

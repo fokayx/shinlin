@@ -67,7 +67,7 @@ class Dashboard::Sunjust::ProductsController < Dashboard::Sunjust::BaseControlle
   end 
 
   def product_params
-    params.require(:product).permit(:name, :texture, :diameter, :size, :surface, photos_attributes: [:id, :images, :product_id])
+    params.require(:product).permit(:name, :en_name, :texture, :diameter, :size, :surface, photos_attributes: [:id, :images, :product_id])
   end
 
 end
