@@ -1,8 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-`ssh-add` # need this to make key-forwarding work
-set :application, 'ShinLin'
+set :application, 'shinlin'
 set :repo_url, 'https://github.com/fokayx/shinlin.git'
 
 # Default branch is :master
@@ -10,6 +9,14 @@ set :repo_url, 'https://github.com/fokayx/shinlin.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/apps/shinlin'
+
+#rbenv
+set :rbenv_type, :user
+set :rbenv_ruby, "2.1.2"
+set :rbenv_path, "/usr/local/rbenv"
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w(rake gem bundle ruby rails)
+set :rbenv_roles, :all 
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -28,7 +35,7 @@ set :log_level, :debug
 set :linked_files, %w(config/database.yml config/secrets.yml)
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -40,10 +47,7 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
          execute :rake, 'cache:clear'
-      # end
     end
   end
 
