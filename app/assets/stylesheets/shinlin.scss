@@ -81,9 +81,8 @@ body div {
 .col-sm-4 .product-thumbnail {
   margin: 5px 0;
   width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
+  background-color: #E4E6E8;
+  box-shadow: none;
 }
 
 .sl-about {
@@ -102,7 +101,7 @@ body div {
 }
 
 .sl-footer {
-  margin: 0px auto 0px;
+  margin: 168px auto 0px;
   padding: 5px 0;
   text-align: center;
   font-size: 10px;
@@ -144,24 +143,23 @@ nav {
 }
 
 .product-show {
-  border: 1px solid #CDD5DA;
   padding: 10px;
   margin: 10px 0;
-  border-radius: 6px;
-  border-radius: 6px;
+  background-color: #E4E6E8;
   a {
-      color: #555;
+      color: #005B94;
     h2 {
-      background: #CCDEEA;
-      padding:0 5px;
+      background: #E4E6E8;
+      padding: 4px 8px 0;
       font-size: 16px;
-      line-height: 36px;
-      margin-bottom: 4px;
+      line-height: 24px;
+      margin-bottom: 0px;
+      margin-top: 0;
+      border-top: 4px solid #005B94;
       }
   }
   img {
     width: 100%;
-    border: 1px solid #ddd;
   }
   ul {
     padding-left: 6px;
@@ -184,7 +182,7 @@ nav {
 .list-group a.list-group-item {
   border: none;
   &:hover {
-    background: #F3F8FB;
+    background: #E4E6E8;
   }
 }
 
@@ -192,8 +190,7 @@ nav {
   img {
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 5px rgba(50,50,50,0.1);
+    border-top: 1px solid #E4E6E8;
   }
 }
 
@@ -201,7 +198,8 @@ nav {
   font-size: 16px;
   padding: 10px 8px;
   margin-bottom: 5px;
-  border: 1px solid #CCDEEA;
+  border: 1px solid #E4E6E8;
+  background-color: #E4E6E8;
   h2 {
     font-size: 20px;
     padding-left: 8px;
@@ -212,9 +210,10 @@ nav {
     color: #005B94;
   }
   .product-table tr td {
-    border-top: 1px solid #CDD5DA;
+    border-top: 1px solid #E4E6E8;
     padding: 10px 8px 10px 8px;
     color: #777;
+    background-color: #fff;
   }
 }
 
