@@ -43,6 +43,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+# CarrierWave upload file
+set :linked_dirs, fetch(:linked_dirs) + %w{public/uploads}
+
 namespace :deploy do
 
   after :restart, :clear_cache do
