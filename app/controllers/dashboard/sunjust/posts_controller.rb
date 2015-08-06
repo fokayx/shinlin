@@ -24,9 +24,6 @@ class Dashboard::Sunjust::PostsController < Dashboard::Sunjust::BaseController
   # end
   end
 
-  def show
-  end
-
   def edit
   end
 

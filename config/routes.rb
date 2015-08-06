@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     namespace :sunjust do
       get 'sign_in' => "base#sign_in"
       resources :products, :photos, :posts
+      resources :photos, except:[:index, :show]
+      resources :posts, except:[:index, :show]
     end
   end
 
