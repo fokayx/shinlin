@@ -1,21 +1,8 @@
-<%= form_for [:dashboard, :sunjust, @post], html: {class:"form-horizontal"} do |f| %>
-  <div class="form-group">
-    <%= f.label :title, "標題", class:"col-sm-3 control-label" %>
-    <div class="col-sm-7">
-      <%= f.text_field :title, class:"form-control" %>
-    </div>
-  </div>
+<%= simple_form_for [:dashboard, :sunjust, @post], wrapper: :horizontal_form do |f| %>
+  <%= f.input :title, label:'標題', label_html: { class: 'col-sm-3'} %>
 
-  <div class="form-group">
-    <%= f.label :content,"內容", class:"col-sm-3 control-label" %>
-    <div class="col-sm-7">
-      <%= f.text_area :content, class:"form-control", :rows =>"8" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-3 col-sm-9">
-      <%= f.submit '更新訊息', class:"btn btn-success" %>
-    </div>
+  <%= f.input :content, label:'內容', label_html: { class: 'col-sm-3'}, input_html: {:rows => "8"} %>
+  <div class="col-sm-3 control-label">
+    <%= f.button :submit, class: 'btn btn-success' %>
   </div>
 <% end %>

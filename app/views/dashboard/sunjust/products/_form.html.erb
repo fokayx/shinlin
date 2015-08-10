@@ -4,58 +4,17 @@
       <h4 class="pull-right">產品資料</h4>
     </div>
   </div>
-  <%= form_for [:dashboard, :sunjust, @product], html: { multipart: true, class:"form-horizontal"} do |f| %>
-    <div class="form-group">
-      <%= f.label :name, '品名', class:"col-sm-3 control-label" %>
-      <div class="col-sm-9">
-        <%= f.text_field :name, class:"form-control" %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :en_name, '英文', class:"col-sm-3 control-label" %>
-      <div class="col-sm-9">
-        <%= f.text_field :en_name, class:"form-control" %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :texture, '材質', class:"col-sm-3 control-label" %>
-      <div class="col-sm-9">
-        <%= f.text_field :texture, class:"form-control" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :diameter, '管徑', class:"col-sm-3 control-label" %>
-      <div class="col-sm-9">
-        <%= f.text_field :diameter, class:"form-control" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :size, '尺寸', class:"col-sm-3 control-label" %>
-      <div class="col-sm-9">
-        <%= f.text_field :size, class:"form-control" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :surface, '表面', class:"col-sm-3 control-label" %>
-      <div class="col-sm-9">
-        <%= f.text_field :surface, class:"form-control" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :photo, '照片', class:"col-sm-3 control-label" %>
-      <div class="col-sm-9">
-        <%= file_field_tag "images[]", type: :file, multiple: true, class:"form-control" %>
-      </div>
-    </div>
-  
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-9">
-        <%= f.submit  class: 'btn btn-success' %>
-      </div>
+  <%= simple_form_for [:dashboard, :sunjust, @product], html: {multipart: true }, wrapper: :horizontal_form do |f| %>
+    <%= f.input :name, label:'品名',label_html:{ class:'col-sm-3'}, input_html: {class:'col-sm-9'}, wrapper_html: {class:'row'} %>
+    <%= f.input :en_name, label:'英文',label_html:{ class:'col-sm-3'}, input_html: {class:'col-sm-9'}, wrapper_html: {class:'row'} %>
+    <%= f.input :texture, label:'材質',label_html:{ class:'col-sm-3'}, input_html: {class:'col-sm-9'}, wrapper_html: {class:'row'} %>
+    <%= f.input :diameter, label:'管徑',label_html:{ class:'col-sm-3'}, input_html: {class:'col-sm-9'}, wrapper_html: {class:'row'} %>
+    <%= f.input :size, label:'尺寸',label_html:{ class:'col-sm-3'}, input_html: {class:'col-sm-9'}, wrapper_html: {class:'row'} %>
+    <%= f.input :surface, label:'表面',label_html:{ class:'col-sm-3'}, input_html: {class:'col-sm-9'}, wrapper_html: {class:'row'} %>
+    <%= f.input :photos, :as => :file, label:'照片',label_html:{ class:'col-sm-3'}, input_html: {:multiple => true, class:'col-sm-9', :name => "images[]"}, wrapper_html: {class:'row'} %>
+    <div class="col-sm-3 control-label">
+      <%= f.button :submit, class:'btn-success' %>
     </div>
   <% end %>
+
 </div>
